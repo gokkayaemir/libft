@@ -6,7 +6,7 @@
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:14:41 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/10 15:58:02 by emgokkay         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:23:44 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*str;
-	const unsigned char	*str1;
-	size_t				i;
+	unsigned char	*str;
+	unsigned char	*str1;
+	size_t			i;
 
-	str = (const unsigned char *)s1;
-	str1 = (const unsigned char *)s2;
+	str = (unsigned char *)s1;
+	str1 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{

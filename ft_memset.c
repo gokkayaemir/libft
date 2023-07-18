@@ -6,7 +6,7 @@
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 11:39:22 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/08 18:15:35 by emgokkay         ###   ########.fr       */
+/*   Updated: 2023/07/17 13:17:54 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*int main()
-{
-	char str[5] = "emir";
-
-	printf("%s\n", ft_memset(str + 1, 'z', 3));
-	printf("%s", str);
-}*/

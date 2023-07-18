@@ -6,7 +6,7 @@
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:53:15 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/10 16:03:42 by emgokkay         ###   ########.fr       */
+/*   Updated: 2023/07/16 18:06:33 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	dest = (char *)dst;
 	source = (char *)src;
+	if (!dest && !source)
+		return (0);
 	i = 0;
 	while (i < n)
 	{

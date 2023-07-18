@@ -6,7 +6,7 @@
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:07:56 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/10 16:07:58 by emgokkay         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:35:42 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
-	char	*ptr;
+	char	*d;
+	int		i;
+	int		j;
 
-	j = 0;
 	i = 0;
-	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!ptr)
-		return (NULL);
-	while (s1[i] != '\0')
+	j = 0;
+	if (s1)
 	{
-		ptr[i] = s1[i];
-		i++;
+		d = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+		if (!d)
+			return (NULL);
+		while (s1[i] != '\0')
+		{
+			d[i] = s1[i];
+			i++;
+		}
+		while (s2[j] != '\0')
+		{
+			d[i++] = s2[j];
+			j++;
+		}
+		d[i] = '\0';
+		return (d);
 	}
-	while (s2[j] != '\0')
-	{
-		ptr[i] = s2[j];
-		i++;
-		j++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (0);
 }

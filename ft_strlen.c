@@ -6,7 +6,7 @@
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:11:58 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/05 17:01:54 by emgokkay         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:32:55 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }

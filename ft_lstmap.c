@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emgokkay <emgokkay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/06 19:02:35 by emgokkay          #+#    #+#             */
-/*   Updated: 2023/07/15 15:07:27 by emgokkay         ###   ########.fr       */
+/*   Created: 2023/07/17 12:19:56 by emgokkay          #+#    #+#             */
+/*   Updated: 2023/07/17 14:24:23 by emgokkay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
-	size_t	dsize;
-	size_t	sosize;
+	t_list	*new;
+	t_list	*begin;
 
-	dsize = ft_strlen(dst);
-	sosize = ft_strlen(src);
-	j = ft_strlen(dst);
-	i = 0;
-	if (dstsize <= dsize)
-		return (sosize + dstsize);
-	while (src[i] != '\0' && j < dstsize - 1)
+	if (lst == NULL || f == NULL)
+		return (NULL);
+	begin = NULL;
+	while (lst)
 	{
-		dst[j] = src[i];
-		j++;
-		i++;
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&begin, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&begin, new);
+		lst = lst->next;
 	}
-	dst[j] = '\0';
-	return (sosize + dsize);
+	return (begin);
 }
